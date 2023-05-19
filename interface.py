@@ -15,7 +15,8 @@ class AssistantInterface:
     customtkinter.set_default_color_theme("dark-blue")
 
     root = customtkinter.CTk()
-    root.geometry("500x350")
+    root.title("Stock Exchange Assistant")
+    root.geometry("500x500")
     
     front_image = Image.open("./Pictures/logo.png")
     test = ImageTk.PhotoImage(front_image)
