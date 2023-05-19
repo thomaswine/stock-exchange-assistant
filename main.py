@@ -1,5 +1,7 @@
-from assistant_menu import AssistantMenu
+#from assistant_menu import AssistantMenu
+from interface import AssistantInterface
 
-menu = AssistantMenu()
+#menu = AssistantMenu()
+interface = AssistantInterface()
 
 
