@@ -7,22 +7,25 @@ stockApi = StockApi()
 class AssistantInterface:
     
     global entry1
-    global dropdown_menu
+    global menu_var
     
-    test_list = ["IBM", "Tesla", "Apple"]
-    
-    def APIcall():
-        stockApi.getCompanyCashflowData(entry1.get())
-
+    def APIcall(*args):
+        global dropdown
+        dropdown = str(menu_var.get())
+        stockApi.getCompanyCashflowData(dropdown)    
+        
     customtkinter.set_appearance_mode("dark")
     customtkinter.set_default_color_theme("dark-blue")
 
     root = customtkinter.CTk()
     root.title("Stock Exchange Assistant")
     root.geometry("500x800")
-    
+
+    test_list = ["IBM", "TSLA", "AAPL"]
+    menu_var = customtkinter.StringVar(root)
+    menu_var.set("IBM")
+        
     front_image = customtkinter.CTkImage(light_image=Image.open("./Pictures/logo.png"), size=(400, 400))
-    #test = ImageTk.PhotoImage(front_image)
     
     frame = customtkinter.CTkFrame(master=root)
     frame.pack(pady=20, padx=60, fill="both", expand=True)
@@ -39,9 +42,9 @@ class AssistantInterface:
     label2 = customtkinter.CTkLabel(master=frame, image=front_image, text="")
     label2.pack(side = "bottom", fill = "both", expand = "yes")
     
-    dropdown_menu = customtkinter.CTkOptionMenu(master=frame, values=test_list, hover=True)
-    dropdown_menu.pack(pady=12, padx=10)
-
+    menu = customtkinter.CTkOptionMenu(master=frame, hover=True, variable=menu_var, values=test_list)
+    menu.pack(pady=12, padx=10)
+    
     root.mainloop()
 
 
