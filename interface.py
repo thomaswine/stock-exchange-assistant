@@ -23,7 +23,7 @@ class AssistantInterface:
 
     test_list = ["IBM", "TSLA", "AAPL"]
     menu_var = customtkinter.StringVar(root)
-    menu_var.set("IBM")
+    menu_var.set("Choose Symbol")
         
     front_image = customtkinter.CTkImage(light_image=Image.open("./Pictures/logo.png"), size=(400, 400))
     
@@ -36,14 +36,14 @@ class AssistantInterface:
     entry1 = customtkinter.CTkEntry(master=frame, placeholder_text="Company Symbol") # Input field
     entry1.pack(pady=12, padx=10)
 
-    button = customtkinter.CTkButton(master=frame, text="Draw diagramm", hover=True, command=APIcall) # Button
-    button.pack(pady=12, padx=10)
-    
     label2 = customtkinter.CTkLabel(master=frame, image=front_image, text="")
     label2.pack(side = "bottom", fill = "both", expand = "yes")
     
     menu = customtkinter.CTkOptionMenu(master=frame, hover=True, variable=menu_var, values=test_list)
     menu.pack(pady=12, padx=10)
+    
+    button = customtkinter.CTkButton(master=frame, text="Draw diagramm", hover=True, command=APIcall) # Button
+    button.pack(pady=12, padx=10)
     
     root.mainloop()
 
