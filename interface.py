@@ -44,7 +44,7 @@ class AssistantInterface:
     button = customtkinter.CTkButton(master=frame, text="Draw diagramm", hover=True, command=APIcall) # Button
     button.pack(pady=12, padx=10)
     
-    entry1 = customtkinter.CTkEntry(master=frame, placeholder_text="Search") # Input field
+    entry1 = customtkinter.CTkEntry(master=frame, placeholder_text="Search").grid(row=3) # Input field
     entry1.pack(pady=12, padx=10)
     
     root.mainloop()
