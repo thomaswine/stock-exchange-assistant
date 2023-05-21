@@ -35,9 +35,6 @@ class AssistantInterface:
     label =customtkinter.CTkLabel(master=frame, text="Stock Exchange Assistant", font=("Roboto", 24)) # Custom text
     label.pack(pady=12, padx=10)
 
-    #entry1 = customtkinter.CTkEntry(master=frame, placeholder_text="Company Symbol") # Input field
-    #entry1.pack(pady=12, padx=10)
-
     label2 = customtkinter.CTkLabel(master=frame, image=front_image, text="")
     label2.pack(side = "bottom", fill = "both", expand = "yes")
     
@@ -46,6 +43,9 @@ class AssistantInterface:
     
     button = customtkinter.CTkButton(master=frame, text="Draw diagramm", hover=True, command=APIcall) # Button
     button.pack(pady=12, padx=10)
+    
+    entry1 = customtkinter.CTkEntry(master=frame, placeholder_text="Search") # Input field
+    entry1.pack(pady=12, padx=10)
     
     root.mainloop()
 
