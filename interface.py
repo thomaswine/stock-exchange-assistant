@@ -1,8 +1,10 @@
 from stock_api import StockApi
-from PIL import ImageTk, Image  
+from PIL import ImageTk, Image
+from database import StockDatabase  
 import customtkinter
 
 stockApi = StockApi()
+database = StockDatabase()
 
 class AssistantInterface:
     
@@ -21,7 +23,7 @@ class AssistantInterface:
     root.title("Stock Exchange Assistant")
     root.geometry("500x800")
 
-    test_list = ["IBM", "TSLA", "AAPL"]
+    test_list = database.initDatabase()
     menu_var = customtkinter.StringVar(root)
     menu_var.set("Choose Symbol")
         
