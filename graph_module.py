@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 class GraphModule:
 
     def createGraph(self, x_data, y_data, title, x_name, y_name ):
+        
+        plt.style.use('dark_background')
+        
+        plt.figure(figsize=(16, 8))
 
         tick_label = x_data
         
