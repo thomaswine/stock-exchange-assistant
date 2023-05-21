@@ -12,7 +12,7 @@ class AssistantInterface:
     test_list = ["IBM", "Tesla", "Apple"]
     
     def APIcall():
-        stockApi.getCompanyCashflowData()
+        stockApi.getCompanyCashflowData(entry1.get())
 
     customtkinter.set_appearance_mode("dark")
     customtkinter.set_default_color_theme("dark-blue")
@@ -21,8 +21,8 @@ class AssistantInterface:
     root.title("Stock Exchange Assistant")
     root.geometry("500x800")
     
-    front_image = Image.open("./Pictures/logo.png")
-    test = ImageTk.PhotoImage(front_image)
+    front_image = customtkinter.CTkImage(light_image=Image.open("./Pictures/logo.png"), size=(400, 400))
+    #test = ImageTk.PhotoImage(front_image)
     
     frame = customtkinter.CTkFrame(master=root)
     frame.pack(pady=20, padx=60, fill="both", expand=True)
@@ -36,10 +36,10 @@ class AssistantInterface:
     button = customtkinter.CTkButton(master=frame, text="Draw diagramm", hover=True, command=APIcall) # Button
     button.pack(pady=12, padx=10)
     
-    label2 = customtkinter.CTkLabel(master=frame, image=test, text="")
+    label2 = customtkinter.CTkLabel(master=frame, image=front_image, text="")
     label2.pack(side = "bottom", fill = "both", expand = "yes")
     
-    dropdown_menu = customtkinter.CTkOptionMenu(master=frame, values=test_list, hover=True, variable=test)
+    dropdown_menu = customtkinter.CTkOptionMenu(master=frame, values=test_list, hover=True)
     dropdown_menu.pack(pady=12, padx=10)
 
     root.mainloop()
