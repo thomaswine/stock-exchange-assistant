@@ -1,3 +1,3 @@
-from interface import AssistantInterface
+from grid_interface import GridAssistantInterface
 
-interface = AssistantInterface()
+interface = GridAssistantInterface()
