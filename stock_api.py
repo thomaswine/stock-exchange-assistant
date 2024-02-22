@@ -7,7 +7,7 @@ from graph_module import GraphModule
 class StockApi:
     
     STOCK_ENDPOINT = "https://www.alphavantage.co/query"
-    STOCK_API_KEY = "SC42C3GLDERGZCPR"
+    STOCK_API_KEY = "API_KEY"
     
     def getCompanyLastDayPrices(self):
         
